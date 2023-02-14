@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\backend\DashboardController;
+use App\Http\Controllers\frontend\FrontController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/' , [DashboardController::class, 'dashboard']);
+Route::get('/', [FrontController::class, 'home']);
+
+Route::get('/admin' , [DashboardController::class, 'dashboard']);
