@@ -5,7 +5,7 @@
                 <div class="logo"><a href="index.html">
                         <!-- <img src="images/logo.png" alt="" /> --><span>Focus</span></a></div>
                 <li class="label">Main</li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard <span
+                <li><a class="sidebar-sub-toggle"><i class="ti-dashboard"></i> Dashboard <span
                             class="badge badge-primary">2</span> <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
@@ -15,101 +15,137 @@
                 </li>
 
                 <li class="label">Apps</li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Charts <span
+                <li><a class="sidebar-sub-toggle"><i class="ti-crown"></i> Brand <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="chart-flot.html">Flot</a></li>
-                        <li><a href="chart-morris.html">Morris</a></li>
-                        <li><a href="chartjs.html">Chartjs</a></li>
-                        <li><a href="chartist.html">Chartist</a></li>
-                        <li><a href="chart-peity.html">Peity</a></li>
-                        <li><a href="chart-sparkline.html">Sparkle</a></li>
-                        <li><a href="chart-knob.html">Knob</a></li>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Brand</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Brand</a></li>
                     </ul>
                 </li>
-                <li><a href="app-event-calender.html"><i class="ti-calendar"></i> Calender </a></li>
-                <li><a href="app-email.html"><i class="ti-email"></i> Email</a></li>
-                <li><a href="app-profile.html"><i class="ti-user"></i> Profile</a></li>
-                <li><a href="app-widget-card.html"><i class="ti-layout-grid2-alt"></i> Widget</a></li>
-                <li class="label">Features</li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> UI Elements <span
+                <li><a class="sidebar-sub-toggle"><i class="ti-layers"></i> Category <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="ui-typography.html">Typography</a></li>
-                        <li><a href="ui-alerts.html">Alerts</a></li>
-
-                        <li><a href="ui-button.html">Button</a></li>
-                        <li><a href="ui-dropdown.html">Dropdown</a></li>
-
-                        <li><a href="ui-list-group.html">List Group</a></li>
-
-                        <li><a href="ui-progressbar.html">Progressbar</a></li>
-                        <li><a href="ui-tab.html">Tab</a></li>
-
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Category</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Category</a></li>
                     </ul>
                 </li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Components <span
+                <li><a class="sidebar-sub-toggle"><i class="ti-layers-alt"></i> SubCategory <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="uc-calendar.html">Calendar</a></li>
-                        <li><a href="uc-carousel.html">Carousel</a></li>
-                        <li><a href="uc-weather.html">Weather</a></li>
-                        <li><a href="uc-datamap.html">Datamap</a></li>
-                        <li><a href="uc-todo-list.html">To do</a></li>
-                        <li><a href="uc-scrollable.html">Scrollable</a></li>
-                        <li><a href="uc-sweetalert.html">Sweet Alert</a></li>
-                        <li><a href="uc-toastr.html">Toastr</a></li>
-                        <li><a href="uc-range-slider-basic.html">Basic Range Slider</a></li>
-                        <li><a href="uc-range-slider-advance.html">Advance Range Slider</a></li>
-                        <li><a href="uc-nestable.html">Nestable</a></li>
-
-                        <li><a href="uc-rating-bar-rating.html">Bar Rating</a></li>
-                        <li><a href="uc-rating-jRate.html">jRate</a></li>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All SubCategory</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add SubCategory</a></li>
                     </ul>
                 </li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid4-alt"></i> Table <span
+                <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Product Manage <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="table-basic.html">Basic</a></li>
-
-                        <li><a href="table-export.html">Datatable Export</a></li>
-                        <li><a href="table-row-select.html">Datatable Row Select</a></li>
-                        <li><a href="table-jsgrid.html">Editable </a></li>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Product</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Product</a></li>
                     </ul>
                 </li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-heart"></i> Icons <span
+                <li><a class="sidebar-sub-toggle"><i class="ti-layout-slider"></i> Slider Manage <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="font-themify.html">Themify</a></li>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Slider</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Slider</a></li>
                     </ul>
                 </li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-map"></i> Maps <span
+                <li><a class="sidebar-sub-toggle"><i class="ti-blackboard"></i> Banner Manage <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="gmaps.html">Basic</a></li>
-                        <li><a href="vector-map.html">Vector Map</a></li>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Banner</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Banner</a></li>
                     </ul>
                 </li>
-                <li class="label">Form</li>
-                <li><a href="form-basic.html"><i class="ti-view-list-alt"></i> Basic Form </a></li>
-                <li class="label">Extra</li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-files"></i> Invoice <span
+                <li><a class="sidebar-sub-toggle"><i class="ti-cut"></i> Cupon System <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="invoice.html">Basic</a></li>
-                        <li><a href="invoice-editable.html">Editable</a></li>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Cupon</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Cupon</a></li>
                     </ul>
                 </li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-target"></i> Pages <span
+                <li><a class="sidebar-sub-toggle"><i class="ti-location-pin"></i> Shipping Area <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="page-login.html">Login</a></li>
-                        <li><a href="page-register.html">Register</a></li>
-                        <li><a href="page-reset-password.html">Forgot password</a></li>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Division</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>All District</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>All State</a></li>
                     </ul>
                 </li>
-                <li><a href="../documentation/index.html"><i class="ti-file"></i> Documentation</a></li>
-                <li><a><i class="ti-close"></i> Logout</a></li>
+                <li><a class="sidebar-sub-toggle"><i class="ti-gallery"></i> Manage Vendor <span
+                            class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <ul>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>Active Vendor</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Inactive Vendor</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar-sub-toggle"><i class="ti-shopping-cart"></i> Order Manage <span
+                            class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <ul>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>Pending Order</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Confirmed Order</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Processing Order</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Delivered Order</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar-sub-toggle"><i class="ti-back-right"></i> Return Order <span
+                            class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <ul>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>Return Request</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Complete Request</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar-sub-toggle"><i class="ti-receipt"></i> Reports Manage <span
+                            class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <ul>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>Report View</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Order By User</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar-sub-toggle"><i class="ti-user"></i> User Manage <span
+                            class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <ul>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All User</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>All Vendor</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar-sub-toggle"><i class="ti-layout"></i> Blog Manage <span
+                            class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <ul>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Blog Category</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Blog Post</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar-sub-toggle"><i class="ti-comments"></i> Review Manage <span
+                            class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <ul>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>Pending Review</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Publish Review</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar-sub-toggle"><i class="ti-settings"></i> Setting Manage <span
+                            class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <ul>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>Site Setting</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>SEO Setting</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar-sub-toggle"><i class="ti-bag"></i> Stock Manage <span
+                            class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <ul>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>Product Stock</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Role & Permission <span
+                            class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <ul>
+                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Permission</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>All Roles</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Roles In Permission</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>All Roles In Permission</a></li>
+                    </ul>
+                </li>
+                <li><a><i class="ti-unlock"></i> Logout</a></li>
             </ul>
         </div>
     </div>
