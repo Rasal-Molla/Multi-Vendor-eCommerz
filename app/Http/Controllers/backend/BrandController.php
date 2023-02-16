@@ -11,7 +11,7 @@ class BrandController extends Controller
 {
     public function brandList(){
 
-        $brands = Brand::all();
+        $brands = Brand::latest()->get();
         return view('backend.pages.all_brand', compact('brands'));
 
     }
@@ -88,18 +88,12 @@ class BrandController extends Controller
 
     public function brandDelete($id){
 
-        $brandDelete = Brand::find($id);
-        if($brandDelete){
+        $brandDelete = Brand::findOrFail($id);
+        $image = $brandDelete->brand_image;
+        unlink(public_path().'/brands/'.$image);
 
-            $brandDelete->delete();
-
-            return redirect()->back()->with('delete', 'Brand delete successful!');
-
-        }else{
-
-            return redirect()->back()->with('notFound', 'Brand not found!');
-
-        }
+        Brand::findOrFail($id)->delete();
+        return redirect()->back()->with('delete', 'Brand delete successful!');
 
     }
 }

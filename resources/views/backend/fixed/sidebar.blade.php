@@ -25,8 +25,8 @@
                 <li><a class="sidebar-sub-toggle"><i class="ti-layers"></i> Category <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Category</a></li>
-                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Category</a></li>
+                        <li><a href="{{route('all.category')}}"><i class="ti-hand-point-right"></i>All Category</a></li>
+                        <li><a href="{{route('create.category')}}"><i class="ti-hand-point-right"></i>Add Category</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-layers-alt"></i> SubCategory <span
