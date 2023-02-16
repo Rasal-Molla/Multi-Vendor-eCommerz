@@ -18,8 +18,8 @@
                 <li><a class="sidebar-sub-toggle"><i class="ti-crown"></i> Brand <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Brand</a></li>
-                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Brand</a></li>
+                        <li><a href="{{route('all.brand')}}"><i class="ti-hand-point-right"></i>All Brand</a></li>
+                        <li><a href="{{route('create.brand')}}"><i class="ti-hand-point-right"></i>Add Brand</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-layers"></i> Category <span
