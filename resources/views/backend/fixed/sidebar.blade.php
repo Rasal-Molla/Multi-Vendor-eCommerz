@@ -32,8 +32,8 @@
                 <li><a class="sidebar-sub-toggle"><i class="ti-layers-alt"></i> SubCategory <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All SubCategory</a></li>
-                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add SubCategory</a></li>
+                        <li><a href="{{route('all.subcategory')}}"><i class="ti-hand-point-right"></i>All SubCategory</a></li>
+                        <li><a href="{{route('create.subcategory')}}"><i class="ti-hand-point-right"></i>Add SubCategory</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Product Manage <span

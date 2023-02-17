@@ -12,13 +12,13 @@ class CategoryController extends Controller
     public function categoryList(){
 
         $categories = Category::latest()->get();
-        return view('backend.pages.all_category', compact('categories'));
+        return view('backend.pages.category.all_category', compact('categories'));
 
     }
 
     public function categoryForm(){
 
-        return view('backend.pages.create_category');
+        return view('backend.pages.category.create_category');
 
     }
 
@@ -53,7 +53,7 @@ class CategoryController extends Controller
     public function categoryEdit($id){
 
         $categoryEdit = Category::find($id);
-        return view('backend.pages.edit_category', compact('categoryEdit'));
+        return view('backend.pages.category.edit_category', compact('categoryEdit'));
 
     }
 

@@ -12,13 +12,13 @@ class BrandController extends Controller
     public function brandList(){
 
         $brands = Brand::latest()->get();
-        return view('backend.pages.all_brand', compact('brands'));
+        return view('backend.pages.brand.all_brand', compact('brands'));
 
     }
 
     public function brandForm(){
 
-        return view('backend.pages.create_brand');
+        return view('backend.pages.brand.create_brand');
 
     }
 
@@ -53,7 +53,7 @@ class BrandController extends Controller
     public function brandEdit($id){
 
         $brandEdit = Brand::find($id);
-        return view('backend.pages.edit_brand', compact('brandEdit'));
+        return view('backend.pages.brand.edit_brand', compact('brandEdit'));
 
     }
 

@@ -4,6 +4,7 @@ use App\Http\Controllers\backend\AuthController;
 use App\Http\Controllers\backend\BrandController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\DashboardController;
+use App\Http\Controllers\backend\SubCategoryController;
 use App\Http\Controllers\frontend\FrontController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,3 +44,11 @@ Route::post('/category-store', [CategoryController::class, 'categoryStore'])->na
 Route::get('/category-edit/{id}', [CategoryController::class, 'categoryEdit'])->name('edit.category');
 Route::put('/category-update/{id}', [CategoryController::class, 'categoryUpdate'])->name('update.category');
 Route::get('/category-delete/{id}', [CategoryController::class, 'categoryDelete'])->name('delete.category');
+
+// All SubCategory rouute
+Route::get('/all-subcategory', [SubCategoryController::class, 'subCategoryList'])->name('all.subcategory');
+Route::get('/subcategory-form', [SubCategoryController::class, 'subCategoryForm'])->name('create.subcategory');
+Route::post('/subcategory-store', [SubCategoryController::class, 'subCategoryStore'])->name('store.subcategory');
+Route::get('/subcategory-edit/{id}', [SubCategoryController::class, 'subCategoryEdit'])->name('edit.subcategory');
+Route::put('/subcategory-update/{id}', [SubCategoryController::class, 'subCategoryUpdate'])->name('update.subcategory');
+Route::get('/subcategory-delete/{id}', [SubCategoryController::class, 'subCategoryDelete'])->name('delete.subcategory');
