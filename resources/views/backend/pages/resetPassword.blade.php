@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin: Widget</title>
+    <title>Reset Password</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -48,7 +48,7 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-flat m-b-15">Submit</button>
                                 <div class="register-link text-center">
-                                    <p>Back to <a href="#"> Home</a></p>
+                                    <p>Back to <a href="{{route('admin.login')}}"> Home</a></p>
                                 </div>
                             </form>
                         </div>

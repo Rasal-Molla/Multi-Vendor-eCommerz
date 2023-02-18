@@ -24,9 +24,12 @@ Route::get('/', [FrontController::class, 'home']);
 
 // Admin Panel Route
 
-Route::get('/admin' , [DashboardController::class, 'dashboard']);
+Route::get('/admin' , [DashboardController::class, 'dashboard'])->name('dashboard');
 Route::get('/admin-registration', [AuthController::class, 'registration'])->name('admin.registration');
+Route::post('/admin-registration-processing', [AuthController::class, 'process'])->name('admin.registration.process');
 Route::get('/admin-login', [AuthController::class, 'login'])->name('admin.login');
+Route::post('/admin-login-processing', [AuthController::class, 'loginProcess'])->name('admin.login.process');
+Route::get('/admin-logout', [AuthController::class, 'adminLogout'])->name('admin.logout');
 Route::get('/admin-forget-password', [AuthController::class, 'forgetPassword'])->name('admin.forgetPassword');
 
 // All brand route

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin: Widget</title>
+    <title>Login Page</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -40,22 +40,47 @@
                             <a href="#"><span>Focus</span></a>
                         </div>
                         <div class="login-form">
+                            @if($errors->any())
+                                @foreach ($errors->all() as $message)
+                                    <p class="alert alert-danger">{{$message}}</p>
+                                @endforeach
+                            @endif
+
+                            @if(session()->has('message'))
+                                <p class="alert alert-success">{{session()->get('message')}}</p>
+                            @endif
+
                             <h4>Administratior Login</h4>
-                            <form>
+                            <form action="{{route('admin.login.process')}}" method="post">
+                                @csrf
+
+                                
+                            @if(session()->has('error'))
+                                <p class="alert alert-success">{{session()->get('error')}}</p>
+                            @endif
+
+                            @if(session()->has('invalid'))
+                                <p class="alert alert-danger">{{session()->get('invalid')}}</p>
+                            @endif
+
+                            @if(session()->has('logout'))
+                                <p class="alert alert-success">{{session()->get('logout')}}</p>
+                            @endif
+
                                 <div class="form-group">
                                     <label>Email address</label>
-                                    <input type="email" class="form-control" placeholder="Email">
+                                    <input name="email" type="email" class="form-control" placeholder="Enter Email">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input name="password" type="password" class="form-control" placeholder="Enter Password">
                                 </div>
                                 <div class="checkbox">
                                     <label>
 										<input type="checkbox"> Remember Me
 									</label>
                                     <label class="pull-right">
-										<a href="#">Forgotten Password?</a>
+										<a href="{{route('admin.forgetPassword')}}">Forgotten Password?</a>
 									</label>
 
                                 </div>
@@ -67,7 +92,7 @@
                                     </div>
                                 </div>
                                 <div class="register-link m-t-15 text-center">
-                                    <p>Don't have account ? <a href="#"> Sign Up Here</a></p>
+                                    <p>Don't have account ? <a href="{{route('admin.registration')}}"> Sign Up Here</a></p>
                                 </div>
                             </form>
                         </div>

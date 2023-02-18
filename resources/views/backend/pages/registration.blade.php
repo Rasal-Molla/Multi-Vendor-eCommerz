@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin: Widget</title>
+    <title>Admin Registration</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -41,23 +41,30 @@
                         </div>
                         <div class="login-form">
                             <h4>Register to Administration</h4>
-                            <form>
+                            @if($errors->any())
+                                @foreach ($errors->all() as $message)
+                                    <p class="alert alert-danger">{{$message}}</p>
+                                @endforeach
+                            @endif
+
+                            <form action="{{route('admin.registration.process')}}" method="post" enctype="multipart/form-data">
+                                @csrf
+
                                 <div class="form-group">
-                                    <label>User Name</label>
-                                    <input type="email" class="form-control" placeholder="User Name">
+                                    <label>Name</label>
+                                    <input name="name" type="text" class="form-control" placeholder="Enter Name">
                                 </div>
                                 <div class="form-group">
                                     <label>Email address</label>
-                                    <input type="email" class="form-control" placeholder="Email">
+                                    <input name="email" type="email" class="form-control" placeholder="Enter Email">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input name="phone" type="text" class="form-control" placeholder="Enter Phone">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Password">
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-										<input type="checkbox"> Agree the terms and policy
-									</label>
+                                    <input name="password" type="password" class="form-control" placeholder="Enter Password">
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Register</button>
                                 <div class="social-login-content">
@@ -67,7 +74,7 @@
                                     </div>
                                 </div>
                                 <div class="register-link m-t-15 text-center">
-                                    <p>Already have account ? <a href="#"> Sign in</a></p>
+                                    <p>Already have account ? <a href="{{route('admin.login')}}"> Sign in</a></p>
                                 </div>
                             </form>
                         </div>

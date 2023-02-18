@@ -145,7 +145,7 @@
                         <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>All Roles In Permission</a></li>
                     </ul>
                 </li>
-                <li><a><i class="ti-unlock"></i> Logout</a></li>
+                <li><a href="{{route('admin.logout')}}"><i class="ti-unlock"></i> Logout</a></li>
             </ul>
         </div>
     </div>
