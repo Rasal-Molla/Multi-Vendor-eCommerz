@@ -31,6 +31,10 @@ Route::get('/admin-login', [AuthController::class, 'login'])->name('admin.login'
 Route::post('/admin-login-processing', [AuthController::class, 'loginProcess'])->name('admin.login.process');
 Route::get('/admin-logout', [AuthController::class, 'adminLogout'])->name('admin.logout');
 Route::get('/admin-forget-password', [AuthController::class, 'forgetPassword'])->name('admin.forgetPassword');
+Route::post('/admin-forget-password-store', [AuthController::class, 'forgetPasswordStore'])->name('admin.forget.passwordStore');
+Route::get('/admin-reset-password/{token}', [AuthController::class, 'showResetPasswordForm'])->name('reset.password.get');
+
+Route::post('/admin-reset-password-store', [AuthController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
 // All brand route
 Route::get('/all-brand', [BrandController::class, 'brandList'])->name('all.brand');

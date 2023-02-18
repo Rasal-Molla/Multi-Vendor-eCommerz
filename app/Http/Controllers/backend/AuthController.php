@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Http\Controllers\Controller;
+use to;
+use Carbon\Carbon;
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
@@ -72,7 +78,51 @@ class AuthController extends Controller
 
     public function forgetPassword(){
 
-        return view('backend.pages.resetPassword');
+        return view('backend.pages.forgetPassword');
 
     }
+
+    public function forgetPasswordStore(Request $request){
+
+        
+        $request->validate([
+
+            'email'=>'required|email|exists:users',
+
+        ]);
+
+        $token = Str::random(60);
+
+
+        Mail::send('backend.pages.resetPassword', ['token'=>$token], function($message) use($request){
+
+            $message->to($request->email);
+            $message->subject('Reset Password');
+
+        });
+
+        return redirect()->back()->with('message', 'We have e-mailed your password reset link!');
+
+    }
+
+    public function showResetPasswordForm($token) {
+    
+        return view('backend.pages.resetPasswordLink', ['token' => $token]);
+    
+    }
+
+    public function submitResetPasswordForm(Request $request){
+        
+        $request->validate([
+            'email' => 'required|email|exists:users',
+            'password' => 'required|string|confirmed',
+            'password_confirmation' => 'required'
+        ]);
+
+        User::where('email', $request->email)
+                    ->update(['password' => bcrypt($request->password)]);
+
+        return redirect()->route('admin.login')->with('message', 'Your password has been changed!');
+    }
+
 }

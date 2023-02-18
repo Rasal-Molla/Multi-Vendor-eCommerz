@@ -187,7 +187,7 @@
                                                 <span>Lock Screen</span>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li onclick="location.href='{{route('admin.logout')}}'">
                                             <a href="{{route('admin.logout')}}">
                                                 <i class="ti-power-off"></i>
                                                 <span>Logout</span>
