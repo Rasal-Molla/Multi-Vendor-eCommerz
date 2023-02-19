@@ -136,13 +136,18 @@
                         <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>Product Stock</a></li>
                     </ul>
                 </li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Role & Permission <span
+                <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Role<span
+                            class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <ul>
+                        <li><a href="{{route('roles.index')}}"><i class="ti-hand-point-right"></i>All Roles</a></li>
+                        <li><a href="{{route('roles.create')}}"><i class="ti-hand-point-right"></i>Add Roles</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Permission<span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
                         <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Permission</a></li>
-                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>All Roles</a></li>
-                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Roles In Permission</a></li>
-                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>All Roles In Permission</a></li>
+                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Permission</a></li>
                     </ul>
                 </li>
                 <li><a href="{{route('admin.logout')}}"><i class="ti-unlock"></i> Logout</a></li>

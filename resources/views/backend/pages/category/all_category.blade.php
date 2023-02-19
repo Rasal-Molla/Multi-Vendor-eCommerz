@@ -11,7 +11,7 @@
                     <div class="page-header">
                         <div class="page-title">
                             <h1>Hello, <span>Welcome Here</span></h1>
-                            <a href="{{route('create.category')}}" class="btn btn-success">Add category</a>
+                            <a href="{{route('create.category')}}" class="btn btn-lg btn-success"><i class="fa fa-plus"></i> Add category</a>
                         </div>
                     </div>
                 </div>

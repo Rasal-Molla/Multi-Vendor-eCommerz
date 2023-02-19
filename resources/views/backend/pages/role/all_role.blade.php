@@ -11,7 +11,7 @@
                     <div class="page-header">
                         <div class="page-title">
                             <h1>Hello, <span>Welcome Here</span></h1>
-                            <a href="{{route('create.subcategory')}}" class="btn btn-lg btn-success"><i class="fa fa-plus"></i> Add SubCategory</a>
+                            <a href="{{route('roles.create')}}" class="btn btn-lg btn-success"><i class="fa fa-plus"></i> Add Role</a>
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                     <div class="page-header">
                         <div class="page-title">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">SubCategory</a></li>
+                                <li class="breadcrumb-item"><a href="#">Role</a></li>
                                 <li class="breadcrumb-item active">Table</li>
                             </ol>
                         </div>
@@ -51,27 +51,30 @@
 
                                             <tr>
                                                 <th>Sl</th>
-                                                <th>Category Name</th>
-                                                <th>SubCategory Name</th>
+                                                <th>Role Name</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
 
-                                                @foreach ($subCategories as $key=>$subCategory)
-
+                                            @foreach ($roles as $key=>$role)
                                                 <tr>
                                                     <td>{{$key+1}}</td>
-                                                    <td>{{$subCategory->category->category_name}}</td>
-                                                    <td>{{$subCategory->subCategory_name}}</td>
+                                                    <td>{{$role->name}}</td>
+                                                    <td>@if($role->status=='active')
+                                                        <span class="badge badge-success">{{$role->status}}</span>
+                                                        @else
+                                                            <span class="badge badge-danger">{{$role->status}}</span>
+                                                        @endif
+                                                    </td>
                                                     <td>
                                                         <a href="#" class="btn btn-info"><i class="ti-eye"></i></a>
-                                                        <a href="{{route('edit.subcategory', $subCategory->id)}}" class="btn btn-success"><i class="ti-pencil-alt"></i></a>
-                                                        <a href="{{route('delete.subcategory',$subCategory->id)}}" class="btn btn-danger"><i class="ti-trash"></i></a>
+                                                        <a href="{{route('roles.edit', $role->id)}}" class="btn btn-success"><i class="ti-pencil-alt"></i></a>
+                                                        <a href="{{route('roles.destroy', $role->id)}}" class="btn btn-danger"><i class="ti-trash"></i></a>
                                                     </td>
                                                 </tr>
-                                                @endforeach
-
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

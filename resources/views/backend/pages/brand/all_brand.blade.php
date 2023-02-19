@@ -11,7 +11,7 @@
                     <div class="page-header">
                         <div class="page-title">
                             <h1>Hello, <span>Welcome Here</span></h1>
-                            <a href="{{route('create.brand')}}" class="btn btn-success">Add Brand</a>
+                            <a href="{{route('create.brand')}}" class="btn btn-lg btn-success"><i class="fa fa-plus"></i> Add Brand</a>
                         </div>
                     </div>
                 </div>
