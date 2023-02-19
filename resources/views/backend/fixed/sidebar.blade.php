@@ -146,8 +146,8 @@
                 <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Permission<span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Permission</a></li>
-                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Permission</a></li>
+                        <li><a href="{{route('permissions.index')}}"><i class="ti-hand-point-right"></i>All Permission</a></li>
+                        <li><a href="{{route('permissions.create')}}"><i class="ti-hand-point-right"></i>Add Permission</a></li>
                     </ul>
                 </li>
                 <li><a href="{{route('admin.logout')}}"><i class="ti-unlock"></i> Logout</a></li>

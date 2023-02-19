@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Permission;
 use Illuminate\Http\Request;
 
 class PermissionController extends Controller
@@ -14,7 +15,8 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        //
+        $permissions = Permission::latest()->get();
+        return view('backend.pages.permission.all_permission', compact('permissions'));
     }
 
     /**
@@ -24,7 +26,7 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages.permission.create_permission');
     }
 
     /**
@@ -35,7 +37,21 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            'name'=>'required|unique:roles',
+            'status'=>'required'
+
+        ]);
+
+        Permission::create([
+
+            'name'=>$request->name,
+            'status'=>$request->status
+
+        ]);
+
+        return redirect()->route('permissions.index')->with('message', 'Permission added successfully!');
     }
 
     /**
@@ -57,7 +73,8 @@ class PermissionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $permissions = Permission::find($id);
+        return view('backend.pages.permission.edit_permission', compact('permissions'));
     }
 
     /**
@@ -69,7 +86,23 @@ class PermissionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+
+            'name'=>'required',
+            'status'=>'required'
+
+        ]);
+
+        $PermissionUpdate = Permission::find($id);
+
+        $PermissionUpdate->update([
+
+            'name'=>$request->name,
+            'status'=>$request->status
+
+        ]);
+
+        return redirect()->route('permissions.index')->with('message', 'Permission updated successfully!');
     }
 
     /**
@@ -80,6 +113,7 @@ class PermissionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Permission::findOrFail($id)->delete();
+        return redirect()->back()->with('delete', 'Permission deleted successfully!');
     }
 }

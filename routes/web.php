@@ -4,6 +4,7 @@ use App\Http\Controllers\backend\AuthController;
 use App\Http\Controllers\backend\BrandController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\DashboardController;
+use App\Http\Controllers\backend\PermissionController;
 use App\Http\Controllers\backend\RoleController;
 use App\Http\Controllers\backend\SubCategoryController;
 use App\Http\Controllers\frontend\FrontController;
@@ -60,5 +61,6 @@ Route::get('/subcategory-edit/{id}', [SubCategoryController::class, 'subCategory
 Route::put('/subcategory-update/{id}', [SubCategoryController::class, 'subCategoryUpdate'])->name('update.subcategory');
 Route::get('/subcategory-delete/{id}', [SubCategoryController::class, 'subCategoryDelete'])->name('delete.subcategory');
 
-// All Role route
+// Role & Permission route
 Route::resource('/roles', RoleController::class);
+Route::resource('/permissions', PermissionController::class);
