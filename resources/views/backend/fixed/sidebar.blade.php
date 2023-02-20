@@ -141,6 +141,8 @@
                     <ul>
                         <li><a href="{{route('roles.index')}}"><i class="ti-hand-point-right"></i>All Roles</a></li>
                         <li><a href="{{route('roles.create')}}"><i class="ti-hand-point-right"></i>Add Roles</a></li>
+                        <li><a href="{{route('user-role.index')}}"><i class="ti-hand-point-right"></i>All User Wise Roles</a></li>
+                        <li><a href="{{route('user-role.create')}}"><i class="ti-hand-point-right"></i>Add User Wise Roles</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Permission<span

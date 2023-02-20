@@ -7,6 +7,7 @@ use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\PermissionController;
 use App\Http\Controllers\backend\RoleController;
 use App\Http\Controllers\backend\SubCategoryController;
+use App\Http\Controllers\backend\UserRoleController;
 use App\Http\Controllers\frontend\FrontController;
 use Illuminate\Support\Facades\Route;
 
@@ -64,3 +65,4 @@ Route::get('/subcategory-delete/{id}', [SubCategoryController::class, 'subCatego
 // Role & Permission route
 Route::resource('/roles', RoleController::class);
 Route::resource('/permissions', PermissionController::class);
+Route::resource('/user-role', UserRoleController::class);
