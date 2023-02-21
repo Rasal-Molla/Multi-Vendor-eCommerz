@@ -71,7 +71,12 @@
                                                     <td>
                                                         <a href="#" class="btn btn-info"><i class="ti-eye"></i></a>
                                                         <a href="{{route('roles.edit', $role->id)}}" class="btn btn-success"><i class="ti-pencil-alt"></i></a>
-                                                        <a href="{{route('roles.destroy', $role->id)}}" class="btn btn-danger"><i class="ti-trash"></i></a>
+                                                        <form action="{{route('roles.destroy', $role->id)}}" method="post">
+                                                            @method('DELETE')
+                                                            @csrf
+                                                            
+                                                            <button type="submit" class="btn btn-danger"><i class="ti-trash"></i></button>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                             @endforeach

@@ -113,7 +113,7 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        dd(Role::find($id));
+        //dd(Role::find($id));
         Role::find($id)->delete();
         return redirect()->back()->with('delete','Role deleted successfully!');
 
