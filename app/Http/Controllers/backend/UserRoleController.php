@@ -17,8 +17,6 @@ class UserRoleController extends Controller
      */
     public function index()
     {
-        //$roles = Role::with('role')->get();
-        //$users = User::with('user')->get();
         $userRoles = UserRole::latest()->get();
         return view('backend.pages.user_role.all_user_role', compact('userRoles'));
     }

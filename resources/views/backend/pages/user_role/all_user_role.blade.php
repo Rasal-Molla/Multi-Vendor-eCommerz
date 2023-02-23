@@ -64,7 +64,7 @@
                                                     <td>{{$userRole->role->name}}</td>
                                                     <td>
                                                         <a href="{{route('user-role.edit', $userRole->id)}}" class="btn btn-success"><i class="ti-pencil-alt"></i></a>
-                                                        <a href="{{route('user-role.destroy', $userRole->id)}}" class="btn btn-danger"><i class="ti-trash"></i></a>
+                                                        <a href="{{route('user.roles.delete', $userRole->id)}}" class="btn btn-danger"><i class="ti-trash"></i></a>
                                                     </td>
                                                 </tr>
                                             @endforeach

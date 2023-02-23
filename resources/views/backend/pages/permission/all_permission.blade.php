@@ -71,7 +71,7 @@
                                                     <td>
                                                         <a href="#" class="btn btn-info"><i class="ti-eye"></i></a>
                                                         <a href="{{route('permissions.edit', $permission->id)}}" class="btn btn-success"><i class="ti-pencil-alt"></i></a>
-                                                        <a href="{{route('permissions.destroy', $permission->id)}}" class="btn btn-danger"><i class="ti-trash"></i></a>
+                                                        <a href="{{route('permissions.delete', $permission->id)}}" class="btn btn-danger"><i class="ti-trash"></i></a>
                                                     </td>
                                                 </tr>
                                             @endforeach

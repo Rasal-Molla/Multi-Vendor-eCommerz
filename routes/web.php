@@ -27,7 +27,7 @@ Route::get('/', [FrontController::class, 'home']);
 
 // Admin Panel Route
 
-Route::get('/admin' , [DashboardController::class, 'dashboard'])->name('dashboard');
+Route::get('/admin', [DashboardController::class, 'dashboard'])->name('dashboard');
 Route::get('/admin-registration', [AuthController::class, 'registration'])->name('admin.registration');
 Route::post('/admin-registration-processing', [AuthController::class, 'process'])->name('admin.registration.process');
 Route::get('/admin-login', [AuthController::class, 'login'])->name('admin.login');
@@ -63,6 +63,9 @@ Route::put('/subcategory-update/{id}', [SubCategoryController::class, 'subCatego
 Route::get('/subcategory-delete/{id}', [SubCategoryController::class, 'subCategoryDelete'])->name('delete.subcategory');
 
 // Role & Permission route
-Route::resource('/roles', RoleController::class);
-Route::resource('/permissions', PermissionController::class);
-Route::resource('/user-role', UserRoleController::class);
+Route::resource('/roles', RoleController::class)->except('destroy');
+Route::get('/roles/delete/{id}', [RoleController::class, 'destroy'])->name('roles.delete');
+Route::resource('/permissions', PermissionController::class)->except('destroy');
+Route::get('/permissions/delete/{id}', [PermissionController::class, 'destroy'])->name('permissions.delete');
+Route::resource('/user-role', UserRoleController::class)->except('destroy');
+Route::get('/user-roles/delete/{id}', [UserRoleController::class, 'destroy'])->name('user.roles.delete');
