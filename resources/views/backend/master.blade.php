@@ -32,6 +32,9 @@
     <link href="{{url('/backend/css/lib/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{url('/backend/css/lib/helper.css')}}" rel="stylesheet">
     <link href="{{url('/backend/css/style.css')}}" rel="stylesheet">
+    @notifyCss
+    <style type="text/css"> .notify{z-index: 1000000; margin-top: 5px;}</style>
+
 </head>
 
 <body>
@@ -40,23 +43,23 @@
 
     @include('backend.fixed.sidebar')
 
-
     <!-- /# sidebar -->
-
-
-
+    
+    
+    
     @include('backend.fixed.header')
-
-
+    
+    
     <div class="content-wrap">
         <div class="main">
-
+            
+            <x:notify-messages />
             @yield('content')
-
+            
 
         </div>
     </div>
-
+    
     <!-- jquery vendor -->
     <script src="{{url('/backend/js/lib/jquery.min.js')}}"></script>
     <script src="{{url('/backend/js/lib/jquery.nanoscroller.min.js')}}"></script>
@@ -85,6 +88,8 @@
     <script src="{{url('/backend/js/lib/owl-carousel/owl.carousel-init.js')}}"></script>
     <!-- scripit init-->
     <script src="{{url('/backend/js/dashboard2.js')}}"></script>
+    @notifyJs
+
 </body>
 
 </html>

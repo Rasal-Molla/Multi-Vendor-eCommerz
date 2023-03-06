@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Http\Controllers\Controller;
+use notify;
 use App\Models\Brand;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 
 class BrandController extends Controller
@@ -46,7 +47,8 @@ class BrandController extends Controller
 
         ]);
 
-        return redirect()->back()->with('message', 'Brand added successful!');
+        notify()->success('Brand added successful!');
+        return redirect()->back();
 
     }
 
@@ -93,7 +95,9 @@ class BrandController extends Controller
         unlink(public_path().'/brands/'.$image);
 
         Brand::findOrFail($id)->delete();
-        return redirect()->back()->with('delete', 'Brand delete successful!');
+        
+        notify()->success('Brand delete successful!');
+        return redirect()->back();
 
     }
 }
