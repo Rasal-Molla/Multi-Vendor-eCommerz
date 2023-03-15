@@ -9,6 +9,7 @@ use App\Http\Controllers\backend\RoleController;
 use App\Http\Controllers\backend\SubCategoryController;
 use App\Http\Controllers\backend\UserRoleController;
 use App\Http\Controllers\frontend\FrontController;
+use App\Http\Controllers\LangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [FrontController::class, 'home']);
+Route::get('/switch-lang/{lang}', [LangController::class, 'lang'])->name('lang');
 
 
 // Admin Panel Route
