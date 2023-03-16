@@ -47,7 +47,8 @@ class BrandController extends Controller
 
         ]);
 
-        notify()->success('Brand added successful!');
+        toastr()->success('Brand added successful!');
+        // notify()->success('Brand added successful!');
         return redirect()->back();
 
     }
