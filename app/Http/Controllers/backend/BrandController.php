@@ -46,9 +46,9 @@ class BrandController extends Controller
             'brand_image'=>$brandRename
 
         ]);
-
-        toastr()->success('Brand added successful!');
-        // notify()->success('Brand added successful!');
+        toastr()->success('Messages in here', 'Title', ["positionClass" => "toast-top-center"]);
+        // toastr()->success('Brand added successful!', 'Congrates');
+        //notify()->success('Brand added successful!');
         return redirect()->back();
 
     }
