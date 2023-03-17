@@ -46,9 +46,7 @@ class BrandController extends Controller
             'brand_image'=>$brandRename
 
         ]);
-        toastr()->success('Messages in here', 'Title', ["positionClass" => "toast-top-center"]);
-        // toastr()->success('Brand added successful!', 'Congrates');
-        //notify()->success('Brand added successful!');
+
         return redirect()->back();
 
     }
@@ -96,8 +94,6 @@ class BrandController extends Controller
         unlink(public_path().'/brands/'.$image);
 
         Brand::findOrFail($id)->delete();
-        
-        notify()->success('Brand delete successful!');
         return redirect()->back();
 
     }
