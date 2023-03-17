@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\backend\AuthController;
+use App\Http\Controllers\backend\BannerController;
 use App\Http\Controllers\backend\BrandController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\CuponController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\PermissionController;
+use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\RoleController;
 use App\Http\Controllers\backend\SubCategoryController;
 use App\Http\Controllers\backend\UserRoleController;
@@ -73,6 +75,33 @@ Route::get('/cupon-edit/{id}', [CuponController::class, 'cuponEdit'])->name('edi
 Route::put('/cupon-update/{id}', [CuponController::class, 'cuponUpdate'])->name('update.cupon');
 Route::get('/cupon-delete/{id}', [CuponController::class, 'cuponDelete'])->name('delete.cupon');
 Route::get('/cupon-view/{id}', [CuponController::class, 'cuponView'])->name('view.cupon');
+
+// All Slider route
+Route::get('/all-slide', [CuponController::class, 'slideList'])->name('all.slide');
+Route::get('/slide-form', [CuponController::class, 'slideForm'])->name('create.slide');
+Route::post('/slide-store', [CuponController::class, 'slideStore'])->name('store.slide');
+Route::get('/slide-edit/{id}', [CuponController::class, 'slideEdit'])->name('edit.slide');
+Route::put('/slide-update/{id}', [CuponController::class, 'slideUpdate'])->name('update.slide');
+Route::get('/slide-delete/{id}', [CuponController::class, 'slideDelete'])->name('delete.slide');
+Route::get('/slide-view/{id}', [CuponController::class, 'slideView'])->name('view.slide');
+
+// All Banener route
+Route::get('/all-banner', [BannerController::class, 'bannerList'])->name('all.banner');
+Route::get('/banner-form', [BannerController::class, 'bannerForm'])->name('create.banner');
+Route::post('/banner-store', [BannerController::class, 'bannerStore'])->name('store.banner');
+Route::get('/banner-edit/{id}', [BannerController::class, 'bannerEdit'])->name('edit.banner');
+Route::put('/banner-update/{id}', [BannerController::class, 'bannerUpdate'])->name('update.banner');
+Route::get('/banner-delete/{id}', [BannerController::class, 'bannerDelete'])->name('delete.banner');
+Route::get('/banner-view/{id}', [BannerController::class, 'bannerView'])->name('view.banner');
+
+// All Product route
+Route::get('/all-product', [ProductController::class, 'productList'])->name('all.product');
+Route::get('/product-form', [ProductController::class, 'productForm'])->name('create.product');
+Route::post('/product-store', [ProductController::class, 'productStore'])->name('store.product');
+Route::get('/product-edit/{id}', [ProductController::class, 'productEdit'])->name('edit.product');
+Route::put('/product-update/{id}', [ProductController::class, 'productUpdate'])->name('update.product');
+Route::get('/product-delete/{id}', [ProductController::class, 'productDelete'])->name('delete.product');
+Route::get('/product-view/{id}', [ProductController::class, 'productView'])->name('view.product');
 
 // Role & Permission route
 Route::resource('/roles', RoleController::class)->except('destroy');

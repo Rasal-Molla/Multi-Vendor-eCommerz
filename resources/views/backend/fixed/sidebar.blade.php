@@ -39,22 +39,22 @@
                 <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Product Manage <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Product</a></li>
-                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Product</a></li>
+                        <li><a href="{{route('all.product')}}"><i class="ti-hand-point-right"></i>All Product</a></li>
+                        <li><a href="{{route('create.product')}}"><i class="ti-hand-point-right"></i>Add Product</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-layout-slider"></i> Slider Manage <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Slider</a></li>
-                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Slider</a></li>
+                        <li><a href="{{route('all.slider')}}"><i class="ti-hand-point-right"></i>All Slider</a></li>
+                        <li><a href="{{route('create.slider')}}"><i class="ti-hand-point-right"></i>Add Slider</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-blackboard"></i> Banner Manage <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Banner</a></li>
-                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Banner</a></li>
+                        <li><a href="{{route('all.banner')}}"><i class="ti-hand-point-right"></i>All Banner</a></li>
+                        <li><a href="{{route('create.banner')}}"><i class="ti-hand-point-right"></i>Add Banner</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-cut"></i> Cupon System <span
