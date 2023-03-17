@@ -46,8 +46,8 @@
                 <li><a class="sidebar-sub-toggle"><i class="ti-layout-slider"></i> Slider Manage <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="{{route('all.slider')}}"><i class="ti-hand-point-right"></i>All Slider</a></li>
-                        <li><a href="{{route('create.slider')}}"><i class="ti-hand-point-right"></i>Add Slider</a></li>
+                        <li><a href="{{route('all.slide')}}"><i class="ti-hand-point-right"></i>All Slider</a></li>
+                        <li><a href="{{route('create.slide')}}"><i class="ti-hand-point-right"></i>Add Slider</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-blackboard"></i> Banner Manage <span

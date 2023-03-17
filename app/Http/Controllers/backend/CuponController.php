@@ -11,7 +11,7 @@ class CuponController extends Controller
 
     } // End method
 
-    public function cuponCreate(){
+    public function cuponForm(){
 
     } // End method
 

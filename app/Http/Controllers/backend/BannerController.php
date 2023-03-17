@@ -11,7 +11,7 @@ class BannerController extends Controller
 
     } // End method
 
-    public function bannerCreate(){
+    public function bannerForm(){
 
     } // End method
 
