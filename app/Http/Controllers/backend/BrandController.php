@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use notify;
+use toastr;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -47,6 +48,7 @@ class BrandController extends Controller
 
         ]);
 
+        toastr()->success('Brand added successfully','Brand');
         return redirect()->back();
 
     }
@@ -83,7 +85,8 @@ class BrandController extends Controller
 
         ]);
 
-        return redirect()->route('all.brand')->with('message', 'Brand update successful!');
+        toastr()->success('Brand updated successfully', 'Brand');
+        return redirect()->route('all.brand');
 
     }
 
@@ -94,6 +97,7 @@ class BrandController extends Controller
         unlink(public_path().'/brands/'.$image);
 
         Brand::findOrFail($id)->delete();
+        toastr()->success('Brand deleted successfully','Brand');
         return redirect()->back();
 
     }
