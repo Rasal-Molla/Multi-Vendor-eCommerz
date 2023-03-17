@@ -60,8 +60,8 @@
                 <li><a class="sidebar-sub-toggle"><i class="ti-cut"></i> Cupon System <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="chart-flot.html"><i class="ti-hand-point-right"></i>All Cupon</a></li>
-                        <li><a href="chart-morris.html"><i class="ti-hand-point-right"></i>Add Cupon</a></li>
+                        <li><a href="{{route('all.cupon')}}"><i class="ti-hand-point-right"></i>All Cupon</a></li>
+                        <li><a href="{{route('create.cupon')}}"><i class="ti-hand-point-right"></i>Add Cupon</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-location-pin"></i> Shipping Area <span

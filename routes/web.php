@@ -3,6 +3,7 @@
 use App\Http\Controllers\backend\AuthController;
 use App\Http\Controllers\backend\BrandController;
 use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\CuponController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\PermissionController;
 use App\Http\Controllers\backend\RoleController;
@@ -56,13 +57,22 @@ Route::get('/category-edit/{id}', [CategoryController::class, 'categoryEdit'])->
 Route::put('/category-update/{id}', [CategoryController::class, 'categoryUpdate'])->name('update.category');
 Route::get('/category-delete/{id}', [CategoryController::class, 'categoryDelete'])->name('delete.category');
 
-// All SubCategory rouute
+// All SubCategory route
 Route::get('/all-subcategory', [SubCategoryController::class, 'subCategoryList'])->name('all.subcategory');
 Route::get('/subcategory-form', [SubCategoryController::class, 'subCategoryForm'])->name('create.subcategory');
 Route::post('/subcategory-store', [SubCategoryController::class, 'subCategoryStore'])->name('store.subcategory');
 Route::get('/subcategory-edit/{id}', [SubCategoryController::class, 'subCategoryEdit'])->name('edit.subcategory');
 Route::put('/subcategory-update/{id}', [SubCategoryController::class, 'subCategoryUpdate'])->name('update.subcategory');
 Route::get('/subcategory-delete/{id}', [SubCategoryController::class, 'subCategoryDelete'])->name('delete.subcategory');
+
+// All Cupon route
+Route::get('/all-cupon', [CuponController::class, 'cuponList'])->name('all.cupon');
+Route::get('/cupon-form', [CuponController::class, 'cuponForm'])->name('create.cupon');
+Route::post('/cupon-store', [CuponController::class, 'cuponStore'])->name('store.cupon');
+Route::get('/cupon-edit/{id}', [CuponController::class, 'cuponEdit'])->name('edit.cupon');
+Route::put('/cupon-update/{id}', [CuponController::class, 'cuponUpdate'])->name('update.cupon');
+Route::get('/cupon-delete/{id}', [CuponController::class, 'cuponDelete'])->name('delete.cupon');
+Route::get('/cupon-view/{id}', [CuponController::class, 'cuponView'])->name('view.cupon');
 
 // Role & Permission route
 Route::resource('/roles', RoleController::class)->except('destroy');
