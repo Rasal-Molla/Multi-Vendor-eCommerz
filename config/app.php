@@ -199,7 +199,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Mckenziearts\Notify\LaravelNotifyServiceProvider::class
+        Mckenziearts\Notify\LaravelNotifyServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 
