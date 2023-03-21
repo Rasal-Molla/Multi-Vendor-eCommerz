@@ -1,0 +1,71 @@
+1. composer require yajra/laravel-datatables:"^9.0" (Run for installation).
+2. Yajra\DataTables\DataTablesServiceProvider::class, (Add inside providers).
+3.'DataTables' => Yajra\DataTables\Facades\DataTables::class, (Add inside aliases).
+4. php artisan vendor:publish --tag=datatables (Run for configuration).
+5. Add all the cdn for ajax and jquery in master template.
+
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    @stack('js')
+
+6. add this in controller
+ if (request()->ajax()) {
+            $data = Brand::all();
+            return DataTables::of($data)
+                ->addIndexColumn()
+                    ->addColumn('date',function ($row){
+                    return date('Y-M-d',strtotime($row['created_at']));
+                })
+                ->addColumn('action', function($row){
+                    $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-info btn-sm">View</a>
+                        <a href="javascript:void(0)" class="delete btn btn-success btn-sm">Edit</a>
+                        <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return view('backend.pages.brand.all_brand');
+
+7. Add this where we show the list info (keep it botom).
+    @push('js')
+        <script type="text/javascript">
+            $(function() {
+                var table = $('.brand_list').DataTable({
+                    processing: true,
+                    serverSide: true,
+                    ajax: "{{ route('all.brand') }}",
+                    columns: [{
+                            data: 'id',
+                            name: 'id'
+                        },
+                        {
+                            data: 'date',
+                            name: 'date',
+                            searchable: true
+                        },
+                        {
+                            data: 'brand_name',
+                            name: 'brand_name',
+                            searchable: true
+                        },
+                        {
+                            data: 'brand_image',
+                            name: 'brand_image'
+                        },
+                        {
+                            data: 'action',
+                            name: 'action',
+                            orderable: true,
+                            searchable: true
+                        },
+                    ]
+                });
+            });
+        </script>
+    @endpush

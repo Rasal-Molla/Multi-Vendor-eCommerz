@@ -8,13 +8,29 @@ use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use Yajra\DataTables\Facades\DataTables;
 
 class BrandController extends Controller
 {
     public function brandList(){
 
-        $brands = Brand::latest()->get();
-        return view('backend.pages.brand.all_brand', compact('brands'));
+        if (request()->ajax()) {
+            $data = Brand::all();
+            return DataTables::of($data)
+                ->addIndexColumn()
+                    ->addColumn('date',function ($row){
+                    return date('Y-M-d',strtotime($row['created_at']));
+                })
+                ->addColumn('action', function($row){
+                    $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-info btn-sm">View</a>
+                        <a href="javascript:void(0)" class="delete btn btn-success btn-sm">Edit</a>
+                        <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return view('backend.pages.brand.all_brand');
 
     }
 
