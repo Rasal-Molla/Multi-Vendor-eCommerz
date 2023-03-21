@@ -1,0 +1,173 @@
+
+1. Ajax dependency Division, Distict, Upazila, Union, In form must have to use id.
+
+@section('scripts')
+    <script>
+        $(document).ready(function() {
+
+            const getLocation = (id, render_location, routeName) => {
+                var location_id = $(id).val();
+                if (location_id) {
+                    console.log(routeName);
+                    $.ajax({
+                        url: routeName,
+                        type: "POST",
+                        data: {
+                            location_id
+                        },
+                        dataType: "json",
+                        success: function(data) {
+                            console.log(data);
+                            $(render_location).empty();
+                            $(render_location).append(
+                                '<option value="">Select District</option>');
+                            $.each(data, function(key, value) {
+                                $(render_location).append(
+                                    `<option value="${value.id}">${value.name} ${value.bn_name}</option>`
+                                );
+                            });
+                        }
+                    });
+                } else {
+                    $(render_location).empty();
+                }
+            }
+            $('#division_id').on('change', function() {
+                getLocation('#division_id', '#district_id', '{{ route('get.districts') }}')
+            });
+            $('#district_id').on('change', function() {
+                getLocation('#district_id', '#upazila_id', '{{ route('get.upazilas') }}')
+            });
+            $('#upazila_id').on('change', function() {
+                getLocation('#upazila_id', '#union_id', '{{ route('get.unions') }}')
+            });
+        });
+    </script>
+@endsection
+
+
+2. Ajax dependency Division, Distict, Upazila, Union 
+
+<script>
+        $(document).ready(function() {
+            $('#division_id').on('change', function() {
+                var division_id = $(this).val();
+                if (division_id) {
+                    $.ajax({
+                        url: "{{ route('get.districts') }}",
+                        type: "POST",
+                        data: {
+                            division_id
+                        },
+                        dataType: "json",
+                        success: function(data) {
+                            console.log(data);
+                            $('#district_id').empty();
+                            $('#district_id').append(
+                                '<option value="">Select District</option>');
+                            $.each(data, function(key, value) {
+                                $('#district_id').append(
+                                    `<option value="${value.id}">${value.name} ${value.bn_name}</option>`
+                                );
+                            });
+                        }
+                    });
+                } else {
+                    $('#district_id').empty();
+                }
+            });
+            $('#district_id').on('change', function() {
+                var district_id = $(this).val();
+                if (district_id) {
+                    $.ajax({
+                        url: "{{ route('get.upazilas') }}",
+                        type: "POST",
+                        data: {
+                            district_id
+                        },
+                        dataType: "json",
+                        success: function(data) {
+                            console.log(data);
+                            $('#upazila_id').empty();
+                            $('#upazila_id').append(
+                                '<option value="">Select Upazila</option>');
+                            $.each(data, function(key, value) {
+                                $('#upazila_id').append(
+                                    `<option value="${value.id}">${value.name} ${value.bn_name}</option>`
+                                );
+                            });
+                        }
+                    });
+                } else {
+                    $('#upazila_id').empty();
+                }
+            });
+            $('#upazila_id').on('change', function() {
+                var upazila_id = $(this).val();
+                if (upazila_id) {
+                    $.ajax({
+                        url: "{{ route('get.unions') }}",
+                        type: "POST",
+                        data: {
+                            upazila_id
+                        },
+                        dataType: "json",
+                        success: function(data) {
+                            console.log(data);
+                            $('#union_id').empty();
+                            $('#union_id').append(
+                                '<option value="">Select Union</option>');
+                            $.each(data, function(key, value) {
+                                $('#union_id').append(
+                                    `<option value="${value.id}">${value.name} ${value.bn_name}</option>`
+                                );
+                            });
+                        }
+                    });
+                } else {
+                    $('#union_id').empty();
+                }
+            });
+        });
+    </script>
+
+
+3. Function
+
+public function getDistrict(Request $request)
+    {
+        $districts = District::where("division_id", $request->location_id)->get();
+        return $districts;
+    }
+    public function getUpazilas(Request $request)
+    {
+
+        $getUpazilas = Upazila::where("district_id", $request->location_id)->get();
+        return $getUpazilas;
+    }
+    public function getUnions(Request $request)
+    {
+
+        $getUpazila = Union::where("upazila_id", $request->location_id)->get();
+        return $getUpazila;
+    }
+
+4. Route
+
+    Route::post("get-districts/", [RetailerController::class, 'getDistrict'])->name("get.allDistricts");
+    Route::post("get-upazilas/", [RetailerController::class, 'getUpazilas'])->name("get.allUpazilas");
+    Route::post("get-unions/", [RetailerController::class, 'getUnions'])->name("get.allUnions");
+
+5. Ajax Cdn and other setup for master template
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
+    @yield('scripts')
