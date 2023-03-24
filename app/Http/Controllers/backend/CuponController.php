@@ -75,13 +75,20 @@ class CuponController extends Controller
         return redirect()->route('all.cupon');
     } // End method
 
-    public function cuponDelete()
+    public function cuponDelete($id)
     {
-
+        $cupon = Cupon::find($id);
+        if ($cupon) {
+            $cupon->delete();
+            notify()->success('Cupon deleted successfylly');
+            return redirect()->back();
+        }else{
+            notify()->error('Cupon not found');
+            return redirect()->back();
+        }
     } // End method
 
     public function cuponView()
     {
-
     } // End method
 }
