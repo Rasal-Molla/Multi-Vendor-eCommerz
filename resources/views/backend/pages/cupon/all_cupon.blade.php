@@ -56,6 +56,7 @@
                                                 <th>Type</th>
                                                 <th>Start</th>
                                                 <th>End</th>
+                                                <th>Validity</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
@@ -68,13 +69,20 @@
                                                     <td>{{$cupon->name}}</td>
                                                     <td>{{$cupon->value}}</td>
                                                     <td>{{$cupon->type}}</td>
-                                                    <td>{{$cupon->start}}</td>
-                                                    <td>{{$cupon->end}}</td>
+                                                    <td>{{Carbon\Carbon::parse($cupon->start)->format('D, d F Y')}}</td>
+                                                    <td>{{Carbon\Carbon::parse($cupon->end)->format('D, d F Y')}}</td>
+                                                    <td>
+                                                        @if ($cupon->end>= Carbon\Carbon::now()->format('Y-m-d'))
+                                                        <span class="badge rounded-pill bg-success">Valid</span>
+                                                        @else
+                                                        <span class="badge rounded-pill bg-danger">Invalid</span>
+                                                        @endif
+                                                    </td>
                                                     <td>{{$cupon->status}}</td>
                                                     <td>
                                                         <a href="#" class="btn btn-info"><i class="ti-eye"></i></a>
-                                                        <a href="{{route('edit.product', $cupon->id)}}" class="btn btn-success"><i class="ti-pencil-alt"></i></a>
-                                                        <a href="{{route('delete.product', $cupon->id)}}" class="btn btn-danger"><i class="ti-trash"></i></a>
+                                                        <a href="{{route('edit.cupon', $cupon->id)}}" class="btn btn-success"><i class="ti-pencil-alt"></i></a>
+                                                        <a href="{{route('delete.cupon', $cupon->id)}}" class="btn btn-danger"><i class="ti-trash"></i></a>
                                                     </td>
                                                 </tr>
                                             @endforeach
