@@ -30,7 +30,7 @@
                                 <input name="name" type="text" class="form-control" placeholder="Enter Cupon name">
                             </div>
                             <div class="form-group">
-                                <label>Cupon Value</label>
+                                <label>Cupon Value(%)</label>
                                 <input name="value" type="number" class="form-control">
                             </div>
                             <div class="form-group">
