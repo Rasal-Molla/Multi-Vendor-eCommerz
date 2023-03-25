@@ -50,8 +50,14 @@ class SliderController extends Controller
     {
     } // End method
 
-    public function slideDelete()
+    public function slideDelete($id)
     {
+        $slide = Slider::find($id);
+        $image = $slide->image;
+        unlink(public_path().'/slides/'.$image);
+        Slider::findOrFail($id)->delete();
+        notify()->success('Slider deleted successfully');
+        return redirect()->back();
     } // End method
 
     public function slideView()
