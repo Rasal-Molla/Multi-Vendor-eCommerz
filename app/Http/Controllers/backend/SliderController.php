@@ -14,12 +14,32 @@ class SliderController extends Controller
         return view('backend.pages.slider.all_slider', compact('slides'));
     } // End method
 
-    public function slideCreate()
+    public function slideForm()
     {
+        return view('backend.pages.slider.create_slider');
     } // End method
 
-    public function slideStore()
+    public function slideStore(Request $request)
     {
+        //dd($request->all());
+        $request->validate([
+            'title' => 'required',
+            'short_title' => 'required',
+            'image' => 'required',
+        ]);
+
+        $image = null;
+        if ($request->hasFile('image')) {
+            $image = date('Ymdhmi') . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/slides', $image);
+        }
+        Slider::Create([
+            'title' => $request->title,
+            'short_title' => $request->short_title,
+            'image' => $image,
+        ]);
+        notify()->success('Slider Created successfully');
+        return redirect()->back();
     } // End method
 
     public function slideEdit()
