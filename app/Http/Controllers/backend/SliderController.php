@@ -3,35 +3,38 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class SliderController extends Controller
 {
-    public function sliderList(){
-
+    public function slideList()
+    {
+        $slides = Slider::latest()->get();
+        return view('backend.pages.slider.all_slider', compact('slides'));
     } // End method
 
-    public function sliderCreate(){
-
+    public function slideCreate()
+    {
     } // End method
 
-    public function sliderStore(){
-
+    public function slideStore()
+    {
     } // End method
 
-    public function sliderEdit(){
-
+    public function slideEdit()
+    {
     } // End method
 
-    public function csliderpdate(){
-
+    public function cslidepdate()
+    {
     } // End method
 
-    public function sliderDelete(){
-
+    public function slideDelete()
+    {
     } // End method
 
-    public function sliderView(){
-
+    public function slideView()
+    {
     }
 }

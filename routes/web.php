@@ -9,6 +9,7 @@ use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\PermissionController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\RoleController;
+use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\SubCategoryController;
 use App\Http\Controllers\backend\UserRoleController;
 use App\Http\Controllers\frontend\FrontController;
@@ -77,13 +78,13 @@ Route::get('/cupon-delete/{id}', [CuponController::class, 'cuponDelete'])->name(
 Route::get('/cupon-view/{id}', [CuponController::class, 'cuponView'])->name('view.cupon');
 
 // All Slider route
-Route::get('/all-slide', [CuponController::class, 'slideList'])->name('all.slide');
-Route::get('/slide-form', [CuponController::class, 'slideForm'])->name('create.slide');
-Route::post('/slide-store', [CuponController::class, 'slideStore'])->name('store.slide');
-Route::get('/slide-edit/{id}', [CuponController::class, 'slideEdit'])->name('edit.slide');
-Route::put('/slide-update/{id}', [CuponController::class, 'slideUpdate'])->name('update.slide');
-Route::get('/slide-delete/{id}', [CuponController::class, 'slideDelete'])->name('delete.slide');
-Route::get('/slide-view/{id}', [CuponController::class, 'slideView'])->name('view.slide');
+Route::get('/all-slide', [SliderController::class, 'slideList'])->name('all.slide');
+Route::get('/slide-form', [SliderController::class, 'slideForm'])->name('create.slide');
+Route::post('/slide-store', [SliderController::class, 'slideStore'])->name('store.slide');
+Route::get('/slide-edit/{id}', [SliderController::class, 'slideEdit'])->name('edit.slide');
+Route::put('/slide-update/{id}', [SliderController::class, 'slideUpdate'])->name('update.slide');
+Route::get('/slide-delete/{id}', [SliderController::class, 'slideDelete'])->name('delete.slide');
+Route::get('/slide-view/{id}', [SliderController::class, 'slideView'])->name('view.slide');
 
 // All Banener route
 Route::get('/all-banner', [BannerController::class, 'bannerList'])->name('all.banner');
