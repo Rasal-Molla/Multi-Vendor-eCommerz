@@ -31,7 +31,8 @@
                             </div>
                             <div class="form-group">
                                 <label>Short Title</label>
-                                <input name="short_title" type="text" class="form-control" placeholder="Enter short tilte">
+                                <input name="short_title" type="text" class="form-control"
+                                    placeholder="Enter short tilte">
                             </div>
                             <div class="form-group">
                                 <label>Image</label>

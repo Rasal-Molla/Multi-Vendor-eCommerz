@@ -28,11 +28,13 @@
 
                             <div class="form-group">
                                 <label>Slider Title</label>
-                                <input name="title" type="text" class="form-control" value="{{$slide->title}}" placeholder="Enter title">
+                                <input name="title" type="text" class="form-control" value="{{ $slide->title }}"
+                                    placeholder="Enter title">
                             </div>
                             <div class="form-group">
                                 <label>Short Title</label>
-                                <input name="short_title" type="text" class="form-control" value="{{$slide->short_title}}" placeholder="Enter short tilte">
+                                <input name="short_title" type="text" class="form-control"
+                                    value="{{ $slide->short_title }}" placeholder="Enter short tilte">
                             </div>
                             <div class="form-group">
                                 <label>Image</label>
