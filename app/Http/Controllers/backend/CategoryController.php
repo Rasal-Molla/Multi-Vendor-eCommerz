@@ -5,7 +5,9 @@ namespace App\Http\Controllers\backend;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\CategoryMail;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
 
 class CategoryController extends Controller
 {
@@ -45,6 +47,8 @@ class CategoryController extends Controller
             'category_image'=>$categoryRename
 
         ]);
+
+        Mail::to('shuvo@gamil.com')->send(new CategoryMail());
 
         return redirect()->back()->with('message', 'Category added successful!');
 

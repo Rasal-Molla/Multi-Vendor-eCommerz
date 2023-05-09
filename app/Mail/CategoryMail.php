@@ -9,19 +9,18 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class BrandMail extends Mailable
+class CategoryMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $brand;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($brand)
+    public function __construct()
     {
-        $this->brand = $brand;
+        //
     }
 
     /**
@@ -32,7 +31,7 @@ class BrandMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Brand Created Successfully',
+            subject: 'Category Create Info',
         );
     }
 
@@ -44,11 +43,7 @@ class BrandMail extends Mailable
     public function content()
     {
         return new Content(
-            view: 'backend.pages.brand.brandMail',
-            // with: [
-            //     'brand_name' => $this->brand->brand_name,
-            //     'brand_slug' => $this->brand->brand_slug,
-            // ]
+            view: 'backend.pages.category.categoryMail',
         );
     }
 
