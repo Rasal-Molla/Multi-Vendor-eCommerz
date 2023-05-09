@@ -7,7 +7,9 @@ use toastr;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\BrandMail;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
 use Yajra\DataTables\Facades\DataTables;
 
 class BrandController extends Controller
@@ -56,13 +58,15 @@ class BrandController extends Controller
             $request->file('brand_image')->storeAs('/brands', $brandRename);
         }
 
-        Brand::create([
+        $brand=Brand::create([
 
             'brand_name'=>$request->brand_name,
             'brand_slug'=>strtolower(str_replace('','-',$request->brand_name)),
             'brand_image'=>$brandRename
 
         ]);
+
+        Mail::to('rasalmolla159401@gmail.com')->send(new BrandMail($brand));
 
         toastr()->success('Brand added successfully','Brand');
         return redirect()->back();
