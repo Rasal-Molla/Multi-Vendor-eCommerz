@@ -44,6 +44,10 @@ class CategoryMail extends Mailable
     {
         return new Content(
             view: 'backend.pages.category.categoryMail',
+            // with: [
+            //     'category_name' => $this->category->category_name,
+            //     'category_slug' => $this->category->category_slug,
+            // ]
         );
     }
 
