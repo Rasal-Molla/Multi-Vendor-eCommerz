@@ -2,15 +2,15 @@
     <div class="nano">
         <div class="nano-content">
             <ul>
-                <div class="logo"><a href="index.html">
-                        <!-- <img src="images/logo.png" alt="" /> --><span>Focus</span></a></div>
+                <div class="logo"><a href="{{ route('dashboard') }}">
+                        <!-- <img src="images/logo.png" alt="" /> --><span>FOODY</span>
+                    </a></div>
                 <li class="label">Main</li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-dashboard"></i> Dashboard <span
                             class="badge badge-primary">2</span> <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="index.html">Dashboard 1</a></li>
-                        <li><a href="index.html">Dashboard 2</a></li>
+                        <li><a href="{{ route('dashboard') }}">Dashboard 1</a></li>
                     </ul>
                 </li>
 
@@ -18,50 +18,57 @@
                 <li><a class="sidebar-sub-toggle"><i class="ti-crown"></i> Brand <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="{{route('all.brand')}}"><i class="ti-hand-point-right"></i>All Brand</a></li>
-                        <li><a href="{{route('create.brand')}}"><i class="ti-hand-point-right"></i>Add Brand</a></li>
+                        <li><a href="{{ route('all.brand') }}"><i class="ti-hand-point-right"></i>All Brand</a></li>
+                        <li><a href="{{ route('create.brand') }}"><i class="ti-hand-point-right"></i>Add Brand</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-layers"></i> Category <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="{{route('all.category')}}"><i class="ti-hand-point-right"></i>All Category</a></li>
-                        <li><a href="{{route('create.category')}}"><i class="ti-hand-point-right"></i>Add Category</a></li>
+                        <li><a href="{{ route('all.category') }}"><i class="ti-hand-point-right"></i>All Category</a>
+                        </li>
+                        <li><a href="{{ route('create.category') }}"><i class="ti-hand-point-right"></i>Add Category</a>
+                        </li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-layers-alt"></i> SubCategory <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="{{route('all.subcategory')}}"><i class="ti-hand-point-right"></i>All SubCategory</a></li>
-                        <li><a href="{{route('create.subcategory')}}"><i class="ti-hand-point-right"></i>Add SubCategory</a></li>
+                        <li><a href="{{ route('all.subcategory') }}"><i class="ti-hand-point-right"></i>All
+                                SubCategory</a></li>
+                        <li><a href="{{ route('create.subcategory') }}"><i class="ti-hand-point-right"></i>Add
+                                SubCategory</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Product Manage <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="{{route('all.product')}}"><i class="ti-hand-point-right"></i>All Product</a></li>
-                        <li><a href="{{route('create.product')}}"><i class="ti-hand-point-right"></i>Add Product</a></li>
+                        <li><a href="{{ route('all.product') }}"><i class="ti-hand-point-right"></i>All Product</a></li>
+                        <li><a href="{{ route('create.product') }}"><i class="ti-hand-point-right"></i>Add Product</a>
+                        </li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-layout-slider"></i> Slider Manage <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="{{route('all.slide')}}"><i class="ti-hand-point-right"></i>All Slider</a></li>
-                        <li><a href="{{route('create.slide')}}"><i class="ti-hand-point-right"></i>Add Slider</a></li>
+                        <li><a href="{{ route('all.slide') }}"><i class="ti-hand-point-right"></i>All Slider</a></li>
+                        <li><a href="{{ route('create.slide') }}"><i class="ti-hand-point-right"></i>Add Slider</a>
+                        </li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-blackboard"></i> Banner Manage <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="{{route('all.banner')}}"><i class="ti-hand-point-right"></i>All Banner</a></li>
-                        <li><a href="{{route('create.banner')}}"><i class="ti-hand-point-right"></i>Add Banner</a></li>
+                        <li><a href="{{ route('all.banner') }}"><i class="ti-hand-point-right"></i>All Banner</a></li>
+                        <li><a href="{{ route('create.banner') }}"><i class="ti-hand-point-right"></i>Add Banner</a>
+                        </li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-cut"></i> Cupon System <span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="{{route('all.cupon')}}"><i class="ti-hand-point-right"></i>All Cupon</a></li>
-                        <li><a href="{{route('create.cupon')}}"><i class="ti-hand-point-right"></i>Add Cupon</a></li>
+                        <li><a href="{{ route('all.cupon') }}"><i class="ti-hand-point-right"></i>All Cupon</a></li>
+                        <li><a href="{{ route('create.cupon') }}"><i class="ti-hand-point-right"></i>Add Cupon</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-location-pin"></i> Shipping Area <span
@@ -139,20 +146,26 @@
                 <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Role<span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="{{route('roles.index')}}"><i class="ti-hand-point-right"></i>All Roles</a></li>
-                        <li><a href="{{route('roles.create')}}"><i class="ti-hand-point-right"></i>Add Roles</a></li>
-                        <li><a href="{{route('user-role.index')}}"><i class="ti-hand-point-right"></i>All User Wise Roles</a></li>
-                        <li><a href="{{route('user-role.create')}}"><i class="ti-hand-point-right"></i>Add User Wise Roles</a></li>
+                        <li><a href="{{ route('roles.index') }}"><i class="ti-hand-point-right"></i>All Roles</a>
+                        </li>
+                        <li><a href="{{ route('roles.create') }}"><i class="ti-hand-point-right"></i>Add Roles</a>
+                        </li>
+                        <li><a href="{{ route('user-role.index') }}"><i class="ti-hand-point-right"></i>All User Wise
+                                Roles</a></li>
+                        <li><a href="{{ route('user-role.create') }}"><i class="ti-hand-point-right"></i>Add User
+                                Wise Roles</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Permission<span
                             class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="{{route('permissions.index')}}"><i class="ti-hand-point-right"></i>All Permission</a></li>
-                        <li><a href="{{route('permissions.create')}}"><i class="ti-hand-point-right"></i>Add Permission</a></li>
+                        <li><a href="{{ route('permissions.index') }}"><i class="ti-hand-point-right"></i>All
+                                Permission</a></li>
+                        <li><a href="{{ route('permissions.create') }}"><i class="ti-hand-point-right"></i>Add
+                                Permission</a></li>
                     </ul>
                 </li>
-                <li><a href="{{route('admin.logout')}}"><i class="ti-unlock"></i> Logout</a></li>
+                <li><a href="{{ route('admin.logout') }}"><i class="ti-unlock"></i> Logout</a></li>
             </ul>
         </div>
     </div>
